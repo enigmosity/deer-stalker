@@ -8,17 +8,21 @@ namespace MvcMovie.Controllers
         // 
         // GET: /Hunt/
 
-        public string Index()
+        public IActionResult Index()
         {
-            return "Enter your hunting details here";
+            return View();
         }
 
         // will eventually be
         // POST: /EnterHunt/ 
 
-        public string EnterHunt(string location, string species, int confirmedShot = 1)
+        public IActionResult EnterHunt(string location, string species, int confirmedShot = 1)
         {
-            return HtmlEncoder.Default.Encode($"So you shot {confirmedShot} {species} at {location} ");
+            // return HtmlEncoder.Default.Encode($"So you shot {confirmedShot} {species} at {location} ");
+
+            ViewData["Message"] = $"So you shot {confirmedShot} {species} at {location}";
+
+            return View();
         }
     }
 }
