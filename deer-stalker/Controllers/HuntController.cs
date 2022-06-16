@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Encodings.Web;
+using deer_stalker.Models;
 
 namespace MvcMovie.Controllers
 {
@@ -20,9 +21,15 @@ namespace MvcMovie.Controllers
         {
             // return HtmlEncoder.Default.Encode($"So you shot {confirmedShot} {species} at {location} ");
 
-            ViewData["Message"] = $"So you shot {confirmedShot} {species} at {location}";
+            var hunt = new Hunt(){
+                Location = location,
+                Species = species,
+                ConfirmedShot = confirmedShot,
+            };
 
-            return View();
+            ViewData["Hunt"] = hunt;
+
+            return View(hunt);
         }
     }
 }
