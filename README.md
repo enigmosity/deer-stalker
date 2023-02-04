@@ -12,3 +12,7 @@ Next steps:
 - get the application running on a docker container
 - get the application running on a docker container and managed using terraform for AWS
 - once all that is looking good, consider actually implementing a nice UI
+
+Notes:
+- currently to access the enter hunt page, you need to go to hunt/enterhunt
+
